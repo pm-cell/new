@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  PROJECT_ID: [TWÓJ ID PROJEKTU] # Zmień na swój ID projektu Google Cloud
-  SERVICE_NAME: [NAZWA TWOJEJ USŁUGI] # np. apdep1
+  PROJECT_ID: odnowa-472602
+  SERVICE_NAME: odnowa-app
   REGION: europe-west1
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: 'projects/[NUMER PROJEKTU]/locations/global/workloadIdentityPools/[NAZWA PULI]/providers/[NAZWA DOSTAWCY]'
-          service_account: '[NAZWA KONTA USLUGI]@[ID PROJEKTU].iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/402523735278/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider'
+          service_account: 'odnowa-app-sa@odnowa-472602.iam.gserviceaccount.com'
 
       - name: Setup GCloud
         uses: google-github-actions/setup-gcloud@v2
